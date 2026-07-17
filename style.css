@@ -1,0 +1,213 @@
+/* ==========================================
+   BIBLIOTECA "ya bueno xd"
+   style.css
+========================================== */
+
+/* ====== ESTILO GENERAL ====== */
+
+body{
+    margin:0;
+    background:#0d0d0d;
+    color:white;
+    font-family:Georgia, serif;
+}
+
+/* ====== CABECERA ====== */
+
+header{
+    text-align:center;
+    padding:90px 20px 70px;
+}
+
+header h1{
+    margin:0;
+    font-size:58px;
+    font-weight:300;
+    letter-spacing:8px;
+}
+
+.subtitulo{
+    margin-top:20px;
+    font-size:18px;
+    color:#b5b5b5;
+}
+
+.frase{
+    margin-top:50px;
+    color:#666;
+    font-style:italic;
+}
+
+/* ====== CONTENIDO ====== */
+
+main{
+    width:90%;
+    max-width:750px;
+    margin:auto;
+}
+
+/* ====== BUSCADOR ====== */
+
+input{
+    width:100%;
+    padding:16px;
+    background:#1b1b1b;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    margin-bottom:40px;
+    box-sizing:border-box;
+}
+
+/* ====== AÑO ====== */
+
+h2{
+    color:#888;
+    margin-bottom:30px;
+}
+
+/* ====== TARJETAS DE ESCRITOS ====== */
+
+.escrito{
+    display:block;
+    padding:25px 0;
+    border-bottom:1px solid #2c2c2c;
+    transition:.25s;
+}
+
+.escrito:hover{
+    padding-left:12px;
+}
+
+.escrito h3{
+    margin:0;
+    font-size:28px;
+    color:white;
+}
+
+.escrito p{
+    margin-top:8px;
+    margin-bottom:0;
+    color:#888;
+}
+
+/* ====== ENLACES ====== */
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ====== BOTÓN VOLVER ====== */
+
+.volver{
+    display:inline-block;
+    margin-top:40px;
+    margin-bottom:40px;
+    color:#888;
+}
+
+/* ====== FECHA ====== */
+
+.fecha{
+    color:#777;
+    margin-bottom:40px;
+}
+
+/* ====== TÍTULO DEL ESCRITO ====== */
+
+main h1{
+    font-size:36px;
+    margin-bottom:10px;
+    font-weight:normal;
+}
+
+/* ====== LÍNEA ====== */
+
+main hr{
+    border:none;
+    border-top:1px solid #2c2c2c;
+    margin:40px 0;
+}
+
+/* ====== PÁRRAFOS ====== */
+
+main p{
+    color:#d2d2d2;
+    font-size:18px;
+    line-height:1.8;
+    text-align:left;
+    margin-bottom:22px;
+}
+
+/* ====== SCROLL ====== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#444;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#666;
+}
+
+/* ====== PIE DE PÁGINA ====== */
+
+.pie{
+    text-align:center;
+    margin:70px 0 40px;
+    color:#666;
+    font-size:15px;
+}
+
+.pie p{
+    margin:6px 0;
+}
+.azul h3{
+    color:#4da6ff;
+}
+
+.azul:hover h3{
+    color:#78beff;
+}
+/* ====== CAPITULO AZUL ====== */
+
+.capitulo-azul{
+    background:#16324d;
+    color:white;
+}
+
+/* Titulo */
+.capitulo-azul h1{
+    color:white;
+}
+
+/* Fecha */
+.capitulo-azul .fecha{
+    color:white;
+}
+
+/* Texto */
+.capitulo-azul p{
+    color:white;
+}
+
+/* Enlace para volver */
+.capitulo-azul .volver{
+    color:white;
+}
+
+/* Lineas */
+.capitulo-azul hr{
+    border:none;
+    border-top:1px solid rgba(255,255,255,.25);
+}
