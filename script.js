@@ -1,47 +1,156 @@
 /* ==========================================
-   LIRIOS DINAMICOS - CAPITULO AZUL
+   LIRIOS AZULES DINAMICOS
+   VERSION 2
 ========================================== */
 
-const contenedorLirios = document.getElementById("lirios-dinamicos");
+const contenedorLirios =
+    document.getElementById("lirios-dinamicos");
+
 
 if(contenedorLirios){
 
+
     function crearLirio(){
 
-        const lirio = document.createElement("div");
+
+        /* Crear la flor */
+
+        const lirio =
+            document.createElement("div");
+
 
         lirio.classList.add("lirio");
 
-        // Simbolo del lirio
-        lirio.textContent = "✿";
 
-        // Tamaño aleatorio
-        const tamaño = Math.random() * 30 + 25;
+        /* ==================================
+           CREAR PETALOS
+        ================================== */
 
-        // Posicion horizontal aleatoria
-        const posicion = Math.random() * 100;
 
-        // Duracion aleatoria
-        const duracion = Math.random() * 12 + 15;
+        for(let i = 0; i < 6; i++){
 
-        lirio.style.left = posicion + "%";
-        lirio.style.fontSize = tamaño + "px";
-        lirio.style.animationDuration = duracion + "s";
 
-        // Añadir el lirio a la pantalla
+            const petalo =
+                document.createElement("div");
+
+
+            petalo.classList.add("petalo");
+
+
+            lirio.appendChild(petalo);
+
+
+        }
+
+
+        /* ==================================
+           CREAR CENTRO
+        ================================== */
+
+
+        const centro =
+            document.createElement("div");
+
+
+        centro.classList.add("lirio-centro");
+
+
+        lirio.appendChild(centro);
+
+
+        /* ==================================
+           TAMAÑO ALEATORIO
+        ================================== */
+
+
+        const tamaño =
+            Math.random() * 35 + 45;
+
+
+        lirio.style.width =
+            tamaño + "px";
+
+
+        lirio.style.height =
+            tamaño + "px";
+
+
+        /* ==================================
+           POSICION HORIZONTAL
+        ================================== */
+
+
+        const posicion =
+            Math.random() * 100;
+
+
+        lirio.style.left =
+            posicion + "%";
+
+
+        /* ==================================
+           VELOCIDAD
+        ================================== */
+
+
+        const duracion =
+            Math.random() * 12 + 15;
+
+
+        lirio.style.animationDuration =
+            duracion + "s";
+
+
+        /* ==================================
+           ROTACION ALEATORIA
+        ================================== */
+
+
+        const rotacion =
+            Math.random() * 360;
+
+
+        lirio.style.transform =
+            "rotate(" + rotacion + "deg)";
+
+
+        /* ==================================
+           AÑADIR A LA PAGINA
+        ================================== */
+
+
         contenedorLirios.appendChild(lirio);
 
-        // Eliminarlo cuando termine su animacion
+
+        /* ==================================
+           ELIMINAR CUANDO TERMINE
+        ================================== */
+
+
         setTimeout(function(){
+
 
             lirio.remove();
 
+
         }, duracion * 1000);
+
 
     }
 
-    // Crear un lirio cada cierto tiempo
 
-    setInterval(crearLirio, 2500);
+    /* ======================================
+       CREAR LIRIOS CADA 2.5 SEGUNDOS
+    ====================================== */
+
+
+    setInterval(
+
+        crearLirio,
+
+        2500
+
+    );
+
 
 }

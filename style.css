@@ -213,8 +213,10 @@ main p{
 }
 
 /* ==========================================
-   LIRIOS DINAMICOS - CAPITULO AZUL
+   LIRIOS AZULES DINAMICOS - VERSION 2
 ========================================== */
+
+/* Contenedor de los lirios */
 
 #lirios-dinamicos{
     position:fixed;
@@ -227,48 +229,240 @@ main p{
     z-index:0;
 }
 
-/* Cada lirio creado por JavaScript */
+
+/* ==========================================
+   LIRIO
+========================================== */
 
 .lirio{
     position:absolute;
-    font-size:35px;
+
+    width:70px;
+    height:70px;
+
     opacity:0;
-    animation:flotarLirio linear forwards;
-    filter:drop-shadow(0 0 8px rgba(100,180,255,.25));
+
+    animation:
+        flotarLirio linear forwards;
+
+    filter:
+        drop-shadow(0 0 8px rgba(150,200,255,.25));
 }
 
-/* Movimiento del lirio */
+
+/* ==========================================
+   CENTRO DEL LIRIO
+========================================== */
+
+.lirio-centro{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:18px;
+    height:18px;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:#d7eaff;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 8px rgba(180,220,255,.6);
+
+    z-index:3;
+}
+
+
+/* ==========================================
+   PETALOS
+========================================== */
+
+.petalo{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:28px;
+    height:42px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #a9c8e8,
+            #719bc5
+        );
+
+    border-radius:
+        60% 60% 45% 45%;
+
+    transform-origin:
+        50% 100%;
+
+    opacity:.75;
+
+}
+
+
+/* ==========================================
+   POSICION DE LOS PETALOS
+========================================== */
+
+.petalo:nth-child(1){
+
+    transform:
+        translate(-50%,-100%)
+        rotate(0deg);
+
+}
+
+.petalo:nth-child(2){
+
+    transform:
+        translate(-50%,-100%)
+        rotate(60deg);
+
+}
+
+.petalo:nth-child(3){
+
+    transform:
+        translate(-50%,-100%)
+        rotate(120deg);
+
+}
+
+.petalo:nth-child(4){
+
+    transform:
+        translate(-50%,-100%)
+        rotate(180deg);
+
+}
+
+.petalo:nth-child(5){
+
+    transform:
+        translate(-50%,-100%)
+        rotate(240deg);
+
+}
+
+.petalo:nth-child(6){
+
+    transform:
+        translate(-50%,-100%)
+        rotate(300deg);
+
+}
+
+
+/* ==========================================
+   ANIMACION
+========================================== */
 
 @keyframes flotarLirio{
 
     0%{
-        transform:translateY(110vh) translateX(0) rotate(0deg);
+
+        transform:
+            translateY(110vh)
+            translateX(0)
+            rotate(0deg);
+
         opacity:0;
+
     }
+
 
     10%{
-        opacity:.45;
+
+        opacity:.35;
+
     }
+
+
+    30%{
+
+        transform:
+            translateY(75vh)
+            translateX(25px)
+            rotate(8deg);
+
+    }
+
 
     50%{
-        transform:translateY(50vh) translateX(30px) rotate(8deg);
-        opacity:.6;
+
+        transform:
+            translateY(50vh)
+            translateX(-25px)
+            rotate(-8deg);
+
+        opacity:.5;
+
     }
+
+
+    70%{
+
+        transform:
+            translateY(25vh)
+            translateX(30px)
+            rotate(6deg);
+
+    }
+
 
     90%{
-        opacity:.35;
+
+        opacity:.3;
+
     }
 
+
     100%{
-        transform:translateY(-15vh) translateX(-40px) rotate(-8deg);
+
+        transform:
+            translateY(-20vh)
+            translateX(-30px)
+            rotate(-8deg);
+
         opacity:0;
+
     }
 
 }
 
-/* El contenido queda por encima de los lirios */
+
+/* ==========================================
+   CONTENIDO ENCIMA DE LOS LIRIOS
+========================================== */
 
 .capitulo-azul main{
+
     position:relative;
+
     z-index:1;
+
+}
+
+/* ==========================================
+   AJUSTES PARA CELULARES
+========================================== */
+
+@media (max-width:600px){
+
+    .lirio{
+
+        transform:scale(.75);
+
+    }
+
 }
