@@ -381,3 +381,54 @@ main p{
     }
 
 }
+
+/* ==========================================
+   BOTON PARA MOSTRAR / OCULTAR LIRIOS
+========================================== */
+
+.boton-lirios{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:10;
+
+    padding:10px 16px;
+
+    background:rgba(22,50,77,.9);
+    color:white;
+
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:20px;
+
+    font-family:Georgia, serif;
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.boton-lirios:hover{
+    background:rgba(255,255,255,.15);
+}
+
+
+/* ==========================================
+   LIRIOS APAGADOS POR DEFECTO
+========================================== */
+
+.lirios{
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .8s ease;
+}
+
+
+/* ==========================================
+   LIRIOS ACTIVADOS
+========================================== */
+
+.lirios.mostrar-lirios{
+    opacity:1;
+    visibility:visible;
+}

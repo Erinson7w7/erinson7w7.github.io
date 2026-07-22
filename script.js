@@ -154,3 +154,22 @@ if(contenedorLirios){
 
 
 }
+
+const botonLirios = document.getElementById("botonLirios");
+const lirios = document.querySelector(".lirios");
+
+botonLirios.addEventListener("click", function(){
+
+    lirios.classList.toggle("mostrar-lirios");
+
+    if(lirios.classList.contains("mostrar-lirios")){
+
+        botonLirios.textContent = "✕ Ocultar lirios";
+
+    }else{
+
+        botonLirios.textContent = "🌸 Ver lirios";
+
+    }
+
+});
