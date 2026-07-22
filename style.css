@@ -213,153 +213,118 @@ main p{
 }
 
 /* ==========================================
-   LIRIOS AZULES DINAMICOS - VERSION 2
+   LIRIOS ANIMADOS - CAPITULO AZUL
 ========================================== */
+
+.capitulo-azul{
+    background:#16324d;
+    color:white;
+    position:relative;
+    overflow-x:hidden;
+}
 
 /* Contenedor de los lirios */
 
-#lirios-dinamicos{
+.lirios{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
     pointer-events:none;
     overflow:hidden;
     z-index:0;
 }
 
-
-/* ==========================================
-   LIRIO
-========================================== */
+/* Todos los lirios */
 
 .lirio{
     position:absolute;
+    color:#a9c4d9;
+    font-size:42px;
+    opacity:.65;
+    animation: subirLirio linear infinite;
+}
 
-    width:70px;
-    height:70px;
+/* ==========================================
+   LIRIOS DE LOS COSTADOS
+========================================== */
 
-    opacity:0;
+/* Lado izquierdo */
 
-    animation:
-        flotarLirio linear forwards;
+.l1{
+    left:5%;
+    bottom:-80px;
+    animation-duration:18s;
+    animation-delay:0s;
+}
 
-    filter:
-        drop-shadow(0 0 8px rgba(150,200,255,.25));
+.l3{
+    left:12%;
+    bottom:-100px;
+    font-size:30px;
+    animation-duration:22s;
+    animation-delay:5s;
+}
+
+.l5{
+    left:2%;
+    bottom:-120px;
+    font-size:55px;
+    animation-duration:25s;
+    animation-delay:10s;
+}
+
+
+/* Lado derecho */
+
+.l2{
+    right:5%;
+    bottom:-90px;
+    font-size:50px;
+    animation-duration:20s;
+    animation-delay:3s;
+}
+
+.l4{
+    right:12%;
+    bottom:-100px;
+    font-size:32px;
+    animation-duration:24s;
+    animation-delay:8s;
+}
+
+.l6{
+    right:2%;
+    bottom:-120px;
+    font-size:58px;
+    animation-duration:27s;
+    animation-delay:13s;
 }
 
 
 /* ==========================================
-   CENTRO DEL LIRIO
+   LIRIOS QUE ENTRAN AL TEXTO
 ========================================== */
 
-.lirio-centro{
-
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    width:18px;
-    height:18px;
-
-    transform:
-        translate(-50%,-50%);
-
-    background:#d7eaff;
-
-    border-radius:50%;
-
-    box-shadow:
-        0 0 8px rgba(180,220,255,.6);
-
-    z-index:3;
+.cruzado{
+    opacity:.35;
+    font-size:38px;
 }
 
+/* Uno entra desde la izquierda */
 
-/* ==========================================
-   PETALOS
-========================================== */
-
-.petalo{
-
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    width:28px;
-    height:42px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #a9c8e8,
-            #719bc5
-        );
-
-    border-radius:
-        60% 60% 45% 45%;
-
-    transform-origin:
-        50% 100%;
-
-    opacity:.75;
-
+.c1{
+    left:18%;
+    bottom:-100px;
+    animation-duration:30s;
+    animation-delay:15s;
 }
 
+/* Otro entra desde la derecha */
 
-/* ==========================================
-   POSICION DE LOS PETALOS
-========================================== */
-
-.petalo:nth-child(1){
-
-    transform:
-        translate(-50%,-100%)
-        rotate(0deg);
-
-}
-
-.petalo:nth-child(2){
-
-    transform:
-        translate(-50%,-100%)
-        rotate(60deg);
-
-}
-
-.petalo:nth-child(3){
-
-    transform:
-        translate(-50%,-100%)
-        rotate(120deg);
-
-}
-
-.petalo:nth-child(4){
-
-    transform:
-        translate(-50%,-100%)
-        rotate(180deg);
-
-}
-
-.petalo:nth-child(5){
-
-    transform:
-        translate(-50%,-100%)
-        rotate(240deg);
-
-}
-
-.petalo:nth-child(6){
-
-    transform:
-        translate(-50%,-100%)
-        rotate(300deg);
-
+.c2{
+    right:18%;
+    bottom:-120px;
+    animation-duration:32s;
+    animation-delay:25s;
 }
 
 
@@ -367,90 +332,40 @@ main p{
    ANIMACION
 ========================================== */
 
-@keyframes flotarLirio{
+@keyframes subirLirio{
 
     0%{
-
-        transform:
-            translateY(110vh)
-            translateX(0)
-            rotate(0deg);
-
+        transform:translateY(0) rotate(0deg);
         opacity:0;
-
     }
-
 
     10%{
-
-        opacity:.35;
-
+        opacity:.65;
     }
-
-
-    30%{
-
-        transform:
-            translateY(75vh)
-            translateX(25px)
-            rotate(8deg);
-
-    }
-
 
     50%{
-
-        transform:
-            translateY(50vh)
-            translateX(-25px)
-            rotate(-8deg);
-
-        opacity:.5;
-
+        transform:translateY(-50vh) rotate(15deg);
     }
-
-
-    70%{
-
-        transform:
-            translateY(25vh)
-            translateX(30px)
-            rotate(6deg);
-
-    }
-
 
     90%{
-
-        opacity:.3;
-
+        opacity:.65;
     }
 
-
     100%{
-
-        transform:
-            translateY(-20vh)
-            translateX(-30px)
-            rotate(-8deg);
-
+        transform:translateY(-115vh) rotate(-15deg);
         opacity:0;
-
     }
 
 }
 
 
 /* ==========================================
-   CONTENIDO ENCIMA DE LOS LIRIOS
+   CONTENIDO POR ENCIMA DE LOS LIRIOS
 ========================================== */
 
 .capitulo-azul main{
-
     position:relative;
-
     z-index:1;
-
 }
 
 /* ==========================================
