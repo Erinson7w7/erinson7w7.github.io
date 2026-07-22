@@ -158,18 +158,22 @@ if(contenedorLirios){
 const botonLirios = document.getElementById("botonLirios");
 const lirios = document.querySelector(".lirios");
 
-botonLirios.addEventListener("click", function(){
+if (botonLirios && lirios) {
 
-    lirios.classList.toggle("mostrar-lirios");
+    botonLirios.addEventListener("click", function(){
 
-    if(lirios.classList.contains("mostrar-lirios")){
+        lirios.classList.toggle("mostrar-lirios");
 
-        botonLirios.textContent = "✕ Ocultar lirios";
+        if (lirios.classList.contains("mostrar-lirios")) {
 
-    }else{
+            botonLirios.textContent = "✕";
 
-        botonLirios.textContent = "🌸 Ver lirios";
+        } else {
 
-    }
+            botonLirios.textContent = "🍓";
 
-});
+        }
+
+    });
+
+}

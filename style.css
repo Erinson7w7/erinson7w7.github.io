@@ -141,7 +141,9 @@ main p{
     margin-bottom:22px;
 }
 
-/* ====== SCROLL ====== */
+/* ==========================================
+   SCROLL
+========================================== */
 
 ::-webkit-scrollbar{
     width:8px;
@@ -160,7 +162,10 @@ main p{
     background:#666;
 }
 
-/* ====== PIE DE PÁGINA ====== */
+
+/* ==========================================
+   PIE DE PAGINA
+========================================== */
 
 .pie{
     text-align:center;
@@ -172,6 +177,12 @@ main p{
 .pie p{
     margin:6px 0;
 }
+
+
+/* ==========================================
+   COLOR AZUL PARA LA PORTADA
+========================================== */
+
 .azul h3{
     color:#4da6ff;
 }
@@ -179,41 +190,10 @@ main p{
 .azul:hover h3{
     color:#78beff;
 }
-/* ====== CAPITULO AZUL ====== */
 
-.capitulo-azul{
-    background:#16324d;
-    color:white;
-}
-
-/* Titulo */
-.capitulo-azul h1{
-    color:white;
-}
-
-/* Fecha */
-.capitulo-azul .fecha{
-    color:white;
-}
-
-/* Texto */
-.capitulo-azul p{
-    color:white;
-}
-
-/* Enlace para volver */
-.capitulo-azul .volver{
-    color:white;
-}
-
-/* Lineas */
-.capitulo-azul hr{
-    border:none;
-    border-top:1px solid rgba(255,255,255,.25);
-}
 
 /* ==========================================
-   LIRIOS ANIMADOS - CAPITULO AZUL
+   CAPITULO AZUL
 ========================================== */
 
 .capitulo-azul{
@@ -223,43 +203,144 @@ main p{
     overflow-x:hidden;
 }
 
-/* Contenedor de los lirios */
+
+/* ==========================================
+   TEXTO DEL CAPITULO AZUL
+========================================== */
+
+.capitulo-azul h1{
+    color:white;
+}
+
+.capitulo-azul .fecha{
+    color:white;
+}
+
+.capitulo-azul p{
+    color:white;
+}
+
+.capitulo-azul .volver{
+    color:white;
+}
+
+.capitulo-azul hr{
+    border:none;
+    border-top:1px solid rgba(255,255,255,.25);
+}
+
+
+/* ==========================================
+   BOTON MOSTRAR / OCULTAR LIRIOS
+========================================== */
+
+.boton-lirios{
+    position:fixed;
+    top:20px;
+    right:20px;
+
+    z-index:1000;
+
+    padding:10px 16px;
+
+    background:#16324d;
+    color:white;
+
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:20px;
+
+    font-family:Georgia, serif;
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+}
+
+.boton-lirios:hover{
+    background:#244c70;
+}
+
+
+/* ==========================================
+   CONTENEDOR DE LOS LIRIOS
+========================================== */
 
 .lirios{
     position:fixed;
-    inset:0;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
     pointer-events:none;
+
     overflow:hidden;
+
     z-index:0;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
 }
 
-/* Todos los lirios */
+
+/* ==========================================
+   MOSTRAR LIRIOS
+========================================== */
+
+.lirios.mostrar-lirios{
+    opacity:1;
+    visibility:visible;
+}
+
+
+/* ==========================================
+   ESTILO GENERAL DE LOS LIRIOS
+========================================== */
 
 .lirio{
     position:absolute;
+
+    display:block;
+
     color:#a9c4d9;
+
     font-size:42px;
+
+    line-height:1;
+
     opacity:.65;
-    animation: subirLirio linear infinite;
+
+    animation-name:subirLirio;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
 }
 
+
 /* ==========================================
-   LIRIOS DE LOS COSTADOS
+   LIRIOS LATERALES
 ========================================== */
 
-/* Lado izquierdo */
+/* Izquierda */
 
 .l1{
-    left:5%;
+    left:3%;
     bottom:-80px;
     animation-duration:18s;
-    animation-delay:0s;
 }
 
 .l3{
-    left:12%;
+    left:10%;
     bottom:-100px;
+
     font-size:30px;
+
     animation-duration:22s;
     animation-delay:5s;
 }
@@ -267,26 +348,32 @@ main p{
 .l5{
     left:2%;
     bottom:-120px;
+
     font-size:55px;
+
     animation-duration:25s;
     animation-delay:10s;
 }
 
 
-/* Lado derecho */
+/* Derecha */
 
 .l2{
-    right:5%;
+    right:3%;
     bottom:-90px;
+
     font-size:50px;
+
     animation-duration:20s;
     animation-delay:3s;
 }
 
 .l4{
-    right:12%;
+    right:10%;
     bottom:-100px;
+
     font-size:32px;
+
     animation-duration:24s;
     animation-delay:8s;
 }
@@ -294,42 +381,45 @@ main p{
 .l6{
     right:2%;
     bottom:-120px;
+
     font-size:58px;
+
     animation-duration:27s;
     animation-delay:13s;
 }
 
 
 /* ==========================================
-   LIRIOS QUE ENTRAN AL TEXTO
+   LIRIOS QUE PUEDEN CRUZAR EL TEXTO
 ========================================== */
 
-.cruzado{
-    opacity:.35;
-    font-size:38px;
-}
-
-/* Uno entra desde la izquierda */
-
 .c1{
-    left:18%;
+    left:20%;
     bottom:-100px;
+
+    font-size:38px;
+
+    opacity:.3;
+
     animation-duration:30s;
     animation-delay:15s;
 }
 
-/* Otro entra desde la derecha */
-
 .c2{
-    right:18%;
+    right:20%;
     bottom:-120px;
+
+    font-size:38px;
+
+    opacity:.3;
+
     animation-duration:32s;
     animation-delay:25s;
 }
 
 
 /* ==========================================
-   ANIMACION
+   ANIMACION DE LOS LIRIOS
 ========================================== */
 
 @keyframes subirLirio{
@@ -360,75 +450,54 @@ main p{
 
 
 /* ==========================================
-   CONTENIDO POR ENCIMA DE LOS LIRIOS
+   EL TEXTO SIEMPRE QUEDA ENCIMA
+   DE LOS LIRIOS
 ========================================== */
 
 .capitulo-azul main{
     position:relative;
     z-index:1;
+
+    width:90%;
+    max-width:750px;
+
+    margin-left:auto;
+    margin-right:auto;
 }
 
+
 /* ==========================================
-   AJUSTES PARA CELULARES
+   AJUSTES PARA CELULAR
 ========================================== */
 
 @media (max-width:600px){
 
-    .lirio{
-
-        transform:scale(.75);
-
+    .capitulo-azul main{
+        width:88%;
+        max-width:none;
     }
 
-}
+    .boton-lirios{
+        top:15px;
+        right:15px;
 
-/* ==========================================
-   BOTON PARA MOSTRAR / OCULTAR LIRIOS
-========================================== */
+        padding:8px 12px;
 
-.boton-lirios{
-    position:fixed;
-    top:20px;
-    right:20px;
-    z-index:10;
+        font-size:14px;
+    }
 
-    padding:10px 16px;
+    .lirios .lirio{
+        font-size:32px;
+    }
 
-    background:rgba(22,50,77,.9);
-    color:white;
+    .lirios .l5,
+    .lirios .l6{
+        font-size:42px;
+    }
 
-    border:1px solid rgba(255,255,255,.3);
-    border-radius:20px;
+    .lirios .c1,
+    .lirios .c2{
+        font-size:30px;
+    }
 
-    font-family:Georgia, serif;
-    font-size:14px;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.boton-lirios:hover{
-    background:rgba(255,255,255,.15);
-}
-
-
-/* ==========================================
-   LIRIOS APAGADOS POR DEFECTO
-========================================== */
-
-.lirios{
-    opacity:0;
-    visibility:hidden;
-    transition:opacity .8s ease;
-}
-
-
-/* ==========================================
-   LIRIOS ACTIVADOS
-========================================== */
-
-.lirios.mostrar-lirios{
-    opacity:1;
-    visibility:visible;
 }
