@@ -503,8 +503,9 @@ main p{
 }
 
 /* ==========================================
-   DOS MUNDOS
+   VERSION 5
    AZUL + AMARILLO
+   AMARILLO EXPANDIENDOSE DESDE EL CENTRO
 ========================================== */
 
 .capitulo-azul-amarillo{
@@ -519,28 +520,14 @@ main p{
 
     overflow-x:hidden;
 
-    /*
-    FONDO BASE
-    */
-
-    background:
-        linear-gradient(
-            90deg,
-            #16324d 0%,
-            #16324d 32%,
-            #274a56 42%,
-            #596953 48%,
-            #95854d 53%,
-            #c5ad4c 60%,
-            #d4c04f 68%,
-            #d4c04f 100%
-        );
+    /* Todo comienza siendo azul */
+    background:#16324d;
 
 }
 
 
 /* ==========================================
-   CAPA DE FUSION CENTRAL
+   EXPANSION AMARILLA CENTRAL
 ========================================== */
 
 .capitulo-azul-amarillo::before{
@@ -549,20 +536,24 @@ main p{
 
     position:fixed;
 
-    top:-10%;
+    top:-20%;
 
-    left:35%;
+    left:50%;
 
-    width:30%;
+    width:90%;
 
-    height:120%;
+    height:140%;
+
+    transform:translateX(-50%);
 
     pointer-events:none;
 
     z-index:0;
 
     /*
-    ZONA CENTRAL
+    El amarillo nace en el centro
+    y desaparece progresivamente
+    hacia los extremos.
     */
 
     background:
@@ -570,82 +561,45 @@ main p{
         radial-gradient(
             ellipse at center,
 
-            rgba(212,192,79,.45) 0%,
+            rgba(205,185,75,.90) 0%,
 
-            rgba(170,150,75,.35) 25%,
+            rgba(195,177,72,.82) 18%,
 
-            rgba(90,105,80,.30) 45%,
+            rgba(178,164,72,.65) 35%,
 
-            rgba(40,75,85,.20) 65%,
+            rgba(145,140,72,.45) 50%,
 
-            transparent 75%
+            rgba(95,110,78,.25) 65%,
+
+            rgba(40,75,82,.10) 78%,
+
+            transparent 90%
         );
 
-    filter:blur(35px);
+    /*
+    Suaviza los bordes de la expansión
+    */
 
-    transform-origin:center;
+    filter:blur(45px);
 
-    animation:fusionRespira 6s ease-in-out infinite;
+    /*
+    La zona amarilla respira lentamente
+    */
 
-}
+    transform-origin:center center;
 
-
-/* ==========================================
-   PULSO DE LA FUSION
-========================================== */
-
-@keyframes fusionRespira{
-
-    0%{
-
-        transform:
-            scaleX(.85);
-
-        opacity:.65;
-
-    }
-
-    25%{
-
-        transform:
-            scaleX(1);
-
-        opacity:.8;
-
-    }
-
-    50%{
-
-        transform:
-            scaleX(1.15);
-
-        opacity:1;
-
-    }
-
-    70%{
-
-        transform:
-            scaleX(.95);
-
-        opacity:.75;
-
-    }
-
-    100%{
-
-        transform:
-            scaleX(.85);
-
-        opacity:.65;
-
-    }
+    animation:
+        expandirAmarillo
+        8s
+        ease-in-out
+        infinite;
 
 }
 
 
 /* ==========================================
-   PARTICULAS DE LA FUSION
+   SEGUNDA CAPA DE FUSION
+   SUAVIZA LA TRANSICION AZUL-AMARILLO
 ========================================== */
 
 .capitulo-azul-amarillo::after{
@@ -654,110 +608,140 @@ main p{
 
     position:fixed;
 
-    top:0;
+    top:-15%;
 
-    left:45%;
+    left:50%;
 
-    width:10%;
+    width:70%;
 
-    height:100%;
+    height:130%;
+
+    transform:translateX(-50%);
 
     pointer-events:none;
 
     z-index:0;
 
-    opacity:.35;
-
     background:
 
         radial-gradient(
-            circle at 30% 20%,
-            rgba(212,192,79,.8) 0px,
-            transparent 3px
-        ),
+            ellipse at center,
 
-        radial-gradient(
-            circle at 70% 35%,
-            rgba(22,50,77,.8) 0px,
-            transparent 3px
-        ),
+            rgba(235,210,90,.28) 0%,
 
-        radial-gradient(
-            circle at 40% 55%,
-            rgba(255,255,255,.5) 0px,
-            transparent 2px
-        ),
+            rgba(180,165,70,.20) 35%,
 
-        radial-gradient(
-            circle at 65% 70%,
-            rgba(212,192,79,.7) 0px,
-            transparent 3px
-        ),
+            rgba(90,105,80,.14) 60%,
 
-        radial-gradient(
-            circle at 25% 85%,
-            rgba(22,50,77,.8) 0px,
-            transparent 3px
+            transparent 80%
         );
 
-    animation:particulasFusion 10s ease-in-out infinite;
+    filter:blur(70px);
+
+    opacity:.8;
+
+    animation:
+        respiracionCentro
+        6s
+        ease-in-out
+        infinite;
 
 }
 
 
 /* ==========================================
-   MOVIMIENTO DE LAS PARTICULAS
+   ANIMACION PRINCIPAL
+   EL AMARILLO SE EXPANDE Y SE CONTRAE
 ========================================== */
 
-@keyframes particulasFusion{
+@keyframes expandirAmarillo{
 
     0%{
 
         transform:
-            translateX(-5px)
-            translateY(0);
+            translateX(-50%)
+            scaleX(.82);
 
-        opacity:.2;
+        opacity:.72;
 
     }
 
     25%{
 
         transform:
-            translateX(8px)
-            translateY(-10px);
+            translateX(-50%)
+            scaleX(.94);
 
-        opacity:.5;
+        opacity:.82;
 
     }
 
     50%{
 
         transform:
-            translateX(-6px)
-            translateY(5px);
+            translateX(-50%)
+            scaleX(1.10);
 
-        opacity:.35;
+        opacity:.95;
 
     }
 
     75%{
 
         transform:
-            translateX(10px)
-            translateY(-5px);
+            translateX(-50%)
+            scaleX(.94);
 
-        opacity:.5;
+        opacity:.82;
 
     }
 
     100%{
 
         transform:
-            translateX(-5px)
-            translateY(0);
+            translateX(-50%)
+            scaleX(.82);
 
-        opacity:.2;
+        opacity:.72;
+
+    }
+
+}
+
+
+/* ==========================================
+   RESPIRACION DE LA ZONA CENTRAL
+========================================== */
+
+@keyframes respiracionCentro{
+
+    0%{
+
+        transform:
+            translateX(-50%)
+            scale(0.92);
+
+        opacity:.55;
+
+    }
+
+    50%{
+
+        transform:
+            translateX(-50%)
+            scale(1.08);
+
+        opacity:.85;
+
+    }
+
+    100%{
+
+        transform:
+            translateX(-50%)
+            scale(0.92);
+
+        opacity:.55;
 
     }
 
@@ -823,16 +807,58 @@ main p{
 
     border-top:
         1px solid
-        rgba(255,255,255,.25);
+        rgba(255,255,255,.22);
 
 }
 
 
 /* ==========================================
-   AJUSTES PARA CELULAR
+   AJUSTE PARA CELULAR
 ========================================== */
 
 @media (max-width:600px){
+
+    .capitulo-azul-amarillo{
+
+        background:#16324d;
+
+    }
+
+
+    /*
+    En celular ampliamos la zona amarilla
+    para que la fusion no parezca una linea
+    */
+
+    .capitulo-azul-amarillo::before{
+
+        width:150%;
+
+        height:140%;
+
+        filter:blur(60px);
+
+        animation-duration:9s;
+
+    }
+
+
+    /*
+    Segunda capa mas difusa
+    */
+
+    .capitulo-azul-amarillo::after{
+
+        width:120%;
+
+        height:140%;
+
+        filter:blur(80px);
+
+        animation-duration:7s;
+
+    }
+
 
     .capitulo-azul-amarillo main{
 
