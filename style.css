@@ -571,7 +571,7 @@ main p{
 
     transform-origin:center center;
 
-    animation:latidoFusion 4s ease-in-out infinite;
+    animation:latidoFusion 2.5s ease-in-out infinite;
 
 }
 
@@ -582,40 +582,34 @@ main p{
 
 @keyframes latidoFusion{
 
-    /* Estado inicial */
     0%{
-        transform:scaleX(.90);
-        opacity:.75;
+        transform:scaleX(.85);
+        opacity:.7;
     }
 
-    /* Primer pequeño latido */
     15%{
-        transform:scaleX(1.05);
+        transform:scaleX(1.15);
         opacity:1;
     }
 
-    /* Regresa */
-    30%{
-        transform:scaleX(.92);
+    25%{
+        transform:scaleX(.9);
         opacity:.8;
     }
 
-    /* Segundo pequeño latido */
-    45%{
-        transform:scaleX(1.08);
+    40%{
+        transform:scaleX(1.2);
         opacity:1;
     }
 
-    /* Se relaja */
-    65%{
-        transform:scaleX(.94);
-        opacity:.82;
+    60%{
+        transform:scaleX(.95);
+        opacity:.85;
     }
 
-    /* Pausa antes del siguiente ciclo */
     100%{
-        transform:scaleX(.90);
-        opacity:.75;
+        transform:scaleX(.85);
+        opacity:.7;
     }
 
 }
