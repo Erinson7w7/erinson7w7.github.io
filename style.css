@@ -501,3 +501,122 @@ main p{
     }
 
 }
+
+/* ==========================================
+   CAPA 2 - DOS MUNDOS EN COLISION
+   AZUL + AMARILLO
+========================================== */
+
+.capitulo-azul-amarillo{
+
+    margin:0;
+
+    min-height:100vh;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            to right,
+            #16324d 0%,
+            #16324d 25%,
+            #263f4e 35%,
+            #4b5b52 43%,
+            #7d794f 50%,
+            #aa974c 57%,
+            #c4ad4c 65%,
+            #d4c04f 75%,
+            #d4c04f 100%
+        );
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+/* ==========================================
+   FUSION CENTRAL - LATIDO
+========================================== */
+
+.capitulo-azul-amarillo::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-10%;
+
+    left:30%;
+
+    width:40%;
+
+    height:120%;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,220,90,.20) 0%,
+            rgba(170,160,75,.15) 25%,
+            rgba(80,100,80,.10) 45%,
+            transparent 70%
+        );
+
+    filter:blur(45px);
+
+    opacity:.9;
+
+    transform-origin:center center;
+
+    animation:latidoFusion 4s ease-in-out infinite;
+
+}
+
+
+/* ==========================================
+   ANIMACION - LATIDO DE LA FUSION
+========================================== */
+
+@keyframes latidoFusion{
+
+    /* Estado inicial */
+    0%{
+        transform:scaleX(.90);
+        opacity:.75;
+    }
+
+    /* Primer pequeño latido */
+    15%{
+        transform:scaleX(1.05);
+        opacity:1;
+    }
+
+    /* Regresa */
+    30%{
+        transform:scaleX(.92);
+        opacity:.8;
+    }
+
+    /* Segundo pequeño latido */
+    45%{
+        transform:scaleX(1.08);
+        opacity:1;
+    }
+
+    /* Se relaja */
+    65%{
+        transform:scaleX(.94);
+        opacity:.82;
+    }
+
+    /* Pausa antes del siguiente ciclo */
+    100%{
+        transform:scaleX(.90);
+        opacity:.75;
+    }
+
+}
+
