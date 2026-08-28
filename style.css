@@ -69,27 +69,182 @@ h2{
 
 /* ====== TARJETAS DE ESCRITOS ====== */
 
-.escrito{
-    display:block;
-    padding:25px 0;
-    border-bottom:1px solid #2c2c2c;
-    transition:.25s;
+/* ==========================================
+   NOTAS DEL DIARIO
+========================================== */
+
+.notas{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    margin-top:30px;
 }
 
-.escrito:hover{
-    padding-left:12px;
+
+/* ====== NOTA ====== */
+
+.nota{
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+
+    min-height:145px;
+
+    padding:18px 20px 18px 20px;
+
+    box-sizing:border-box;
+
+    background:#eee9dc;
+
+    color:#171717;
+
+    border-radius:4px;
+
+    text-decoration:none;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
 }
 
-.escrito h3{
+
+/* ====== NUMERO ====== */
+
+.numero{
+    font-size:13px;
+
+    color:#777;
+
+    letter-spacing:1px;
+
+    margin-bottom:18px;
+}
+
+
+/* ====== CONTENIDO ====== */
+
+.contenido-nota{
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+
+/* ====== TITULO ====== */
+
+.nota h3{
     margin:0;
-    font-size:28px;
-    color:white;
+
+    font-size:22px;
+
+    font-weight:normal;
+
+    line-height:1.25;
+
+    color:#171717;
 }
 
-.escrito p{
-    margin-top:8px;
-    margin-bottom:0;
+
+/* ====== TEXTO / FECHA ====== */
+
+.nota p{
+    margin:8px 0 0;
+
+    font-size:14px;
+
+    line-height:1.4;
+
+    color:#6f6f6f;
+}
+
+
+/* ====== FLECHA ====== */
+
+.flecha{
+    position:absolute;
+
+    right:18px;
+    bottom:14px;
+
+    font-size:22px;
+
+    color:#333;
+
+    transition:
+        transform .25s ease;
+}
+
+
+/* ====== EFECTO AL PASAR EL CURSOR ====== */
+
+.nota:hover{
+
+    transform:translateY(-5px);
+
+    background:#f3eee3;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.25);
+}
+
+
+.nota:hover .flecha{
+    transform:translateX(5px);
+}
+
+
+/* ==========================================
+   TITULO DE LA SECCION
+========================================== */
+
+#lista h2{
     color:#888;
+
+    font-size:18px;
+
+    font-weight:normal;
+
+    letter-spacing:3px;
+
+    margin-bottom:25px;
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width:600px){
+
+    .notas{
+
+        grid-template-columns:1fr;
+
+        gap:14px;
+    }
+
+    .nota{
+
+        min-height:125px;
+
+        padding:17px 18px;
+    }
+
+    .nota h3{
+
+        font-size:21px;
+    }
+
+    .numero{
+
+        margin-bottom:12px;
+    }
+
 }
 
 /* ====== ENLACES ====== */
