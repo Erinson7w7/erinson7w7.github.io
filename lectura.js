@@ -1,5 +1,4 @@
 
-<script>
 (() => {
   // Cada escrito tendrá su propia posición guardada
   const key = "teveo:lectura:" + location.pathname;
@@ -41,4 +40,4 @@
     }
   });
 })();
-</script>
+
