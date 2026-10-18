@@ -95,9 +95,11 @@ h2{
 
     box-sizing:border-box;
 
-    background:#eee9dc;
+    background:#1a1a1a;
 
-    color:#171717;
+    color:#e5e5e5;
+
+    border:1px solid #292929;
 
     border-radius:4px;
 
@@ -115,7 +117,7 @@ h2{
 .numero{
     font-size:13px;
 
-    color:#777;
+    color:#8a8a8a;
 
     letter-spacing:1px;
 
@@ -146,7 +148,7 @@ h2{
 
     line-height:1.25;
 
-    color:#171717;
+    color:#e5e5e5;
 }
 
 
@@ -159,7 +161,7 @@ h2{
 
     line-height:1.4;
 
-    color:#6f6f6f;
+    color:#a1a1a1;
 }
 
 
@@ -173,7 +175,7 @@ h2{
 
     font-size:22px;
 
-    color:#333;
+    color:#bdbdbd;
 
     transition:
         transform .25s ease;
@@ -186,7 +188,9 @@ h2{
 
     transform:translateY(-5px);
 
-    background:#f3eee3;
+    background:#222222;
+
+    border-color:#3a3a3a;
 
     box-shadow:
         0 12px 25px rgba(0,0,0,.25);
